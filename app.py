@@ -11,8 +11,10 @@ def home():
 @app.route('/process_data', methods=['POST'])
 def process_data():
     data = request.json
+    if data is None:
+        return jsonify({"error": "No JSON received"}), 400
     predictions, predictedclass = predict(data, 'my_model.keras')
-    result = {"status": "ok", "processed_data": data, "predicted value": predictedclass}
+    result = {"status": "ok", "processed_data": data.tolist(), "predicted value": predictedclass}
     return jsonify(result)
 
 if __name__ == '__main__':
