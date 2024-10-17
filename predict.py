@@ -1,7 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras import layers, models # type: ignore
 import matplotlib.pyplot as plt
-import json
 import numpy  as np
 
 def editArray(imagearray):
@@ -9,13 +8,10 @@ def editArray(imagearray):
     imagearray = np.expand_dims(imagearray, axis=0)
     return imagearray
 
-def predict(filepath, modelname):
+def predict(array, modelname):
     model = models.load_model(modelname)
-    with open(filepath, 'r') as file:
-        pixel_matrix = json.load(file)
-    pixel_matrix = np.expand_dims(pixel_matrix, axis=-1)
-    pixel_matrix = np.expand_dims(pixel_matrix, axis=0)
-    predictions = model.predict(pixel_matrix)
+    array = editArray(array)
+    predictions = model.predict(array)
     predicted_class = np.argmax(predictions, axis=1)
     return predictions, predicted_class
 

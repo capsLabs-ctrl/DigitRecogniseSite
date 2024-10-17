@@ -10,8 +10,7 @@ def home():
 @app.route('/process_data', methods=['POST'])
 def process_data():
     data = request.json
-    data = editArray(data)
-    predictions, predictedclass = predict(data)
+    predictions, predictedclass = predict(data, 'my_model.keras')
     result = {"status": "ok", "processed_data": data, "predicted value": predictedclass}
     return jsonify(result)
 

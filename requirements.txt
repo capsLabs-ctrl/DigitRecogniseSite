@@ -1,5 +1,4 @@
 Flask==2.3
 tensorflow
 matplotlib
-json
 numpy
