@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import os
 from predict import predict, editArray
 app = Flask(__name__)
-
+CORS(app, origins=["http://127.0.0.1:5500"])
 @app.route('/')
 def home():
     return "Welcome to the Flask app!"
