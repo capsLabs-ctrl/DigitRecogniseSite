@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import os
+from predict import predict, editArray
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,8 +10,9 @@ def home():
 @app.route('/process_data', methods=['POST'])
 def process_data():
     data = request.json
-    # Здесь будет код обработки массива
-    result = {"status": "ok", "processed_data": data}
+    data = editArray(data)
+    predictions, predictedclass = predict(data)
+    result = {"status": "ok", "processed_data": data, "predicted value": predictedclass}
     return jsonify(result)
 
 if __name__ == '__main__':
