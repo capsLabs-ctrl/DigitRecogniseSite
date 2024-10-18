@@ -13,7 +13,7 @@ def process_data():
     data = request.json
     if data is None:
         return jsonify({"error": "No JSON received"}), 400
-    predictions, predictedclass = predict(data["array"], 'cnn_model_15epoch.keras' if data["model"] == "cnn15e" else 'cnn_model_5epoch.keras' if data["model"] == "cnn5e" else "my_model.keras")
+    predictions, predictedclass = predict(data["array"], 'cnn_model_15epoch.keras' if data["model"] == "cnn15e" else 'cnn_model_5epoch.keras' if data["model"] == "cnn5e" else "my_model.keras" if data["model"] == "perseptron" else "cnn_model_15e_wd.keras")
     result = {"status": "ok", "processed_data": data, "predicted value": int(predictedclass[0]), "predictions" : predictions[0].tolist()}
     return jsonify(result)
 
