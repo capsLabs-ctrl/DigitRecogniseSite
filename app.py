@@ -13,7 +13,7 @@ def process_data():
     data = request.json
     if data is None:
         return jsonify({"error": "No JSON received"}), 400
-    predictions, predictedclass = predict(data, 'my_model.keras')
+    predictions, predictedclass = predict(data, 'cnn_model.keras')
     result = {"status": "ok", "processed_data": data, "predicted value": int(predictedclass[0]), "predictions" : predictions[0].tolist()}
     return jsonify(result)
 
