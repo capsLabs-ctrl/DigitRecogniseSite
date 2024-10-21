@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS 
 import os
 from predict import predict, editArray
-app = Flask(__name__, static_folder='frontend')
+app = Flask(__name__, static_folder='static')
 CORS(app, origins=["http://127.0.0.1:5500"])
 @app.route('/')
 def home():
