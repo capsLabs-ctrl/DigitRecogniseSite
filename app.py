@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS 
 import os
 from predict import predict, editArray
@@ -6,7 +6,7 @@ app = Flask(__name__, static_folder='frontend')
 CORS(app, origins=["http://127.0.0.1:5500"])
 @app.route('/')
 def home():
-    return send_from_directory(app.static_folder, 'index.html')
+    return render_template('index.html')
 
 @app.route('/process_data', methods=['POST'])
 def process_data():
