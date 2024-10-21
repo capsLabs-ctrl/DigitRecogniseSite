@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рисовалка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <canvas id="canvas" width="560" height="560"></canvas>
+        <div class="values-output">
+            <div class="scale"></div>
+            <div class="scale"></div>
+            <div class="scale"></div>
+            <div class="scale"></div>
+            <div class="scale"></div>
+            <div class="scale"></div>
+            <div class="scale"></div>
+            <div class="scale"></div>
+            <div class="scale"></div>
+            <div class="scale"></div>
+        </div>
+    </div>
+    <div id="controls">
+        <button id="clear">Очистить</button>
+        <select id="model_choose" name="model">
+            <option value="cnn15e">CNN 15 эпох</option>
+            <option value="cnn15ewd">CNN 15 эпох с отброской</option>
+            <option value="cnn115ewd">CNN 115 эпох с отброской</option>
+            <option value="cnn5e">CNN 5 эпох</option>
+            <option value="perseptron">Перцептрон</option>
+        </select>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

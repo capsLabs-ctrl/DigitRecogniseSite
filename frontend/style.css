@@ -1,0 +1,112 @@
+:root{
+    --max-width: 200px;
+    --height: 15px;
+    font-family: Arial, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+}
+#canvas {
+    border: 1px solid #000;
+}
+#controls {
+    margin-top: 10px;
+}
+.values-output{
+}
+.main-container{
+    display: inline-flex;
+    align-items: center;
+}
+.scale{
+    display: flex;
+    flex-direction: row;                     
+    justify-content: space-between;    /* Пространство между элементами */
+    align-items: center;              /* Вертикальное выравнивание */
+    width: var(--max-width);
+    position: relative;
+    height: var(--height);
+    background-color: black;
+    margin: 10px 0 0 50px;
+    padding: 0 20px;
+    transition: .3s;
+}
+.scale::before{
+    position: absolute;
+    left: -20px;
+}
+.scale::after{
+    position: absolute;
+    transform: translateX(100%);
+    right: -5px;
+}
+.scale:nth-child(1){
+    width: calc( var(--max-width) * 0.1);
+}
+.scale:nth-child(2){
+    width: calc( var(--max-width) * 0.6);
+}
+.scale:nth-child(1)::before{
+    content: "0";
+}
+.scale:nth-child(1)::after{
+    content: "10%";
+}
+.scale:nth-child(2)::before{
+    content: "1";
+}
+.scale:nth-child(2)::after{
+    content: "60%";
+}
+.scale:nth-child(3)::before{
+    content: "2";
+}
+.scale:nth-child(3)::after{
+    content: "60%";
+}
+.scale:nth-child(4)::before{
+    content: "3";
+}
+.scale:nth-child(4)::after{
+    content: "60%";
+}
+.scale:nth-child(5)::before{
+    content: "4";
+}
+.scale:nth-child(5)::after{
+    content: "60%";
+}
+.scale:nth-child(6)::before{
+    content: "5";
+}
+.scale:nth-child(6)::after{
+    content: "60%";
+}
+.scale:nth-child(7)::before{
+    content: "6";
+}
+.scale:nth-child(7)::after{
+    content: "60%";
+}
+.scale:nth-child(8)::before{
+    content: "7";
+}
+.scale:nth-child(8)::after{
+    content: "60%";
+}
+.scale:nth-child(9)::before{
+    content: "8";
+}
+.scale:nth-child(9)::after{
+    content: "60%";
+}
+.scale:nth-child(10)::before{
+    content: "9";
+}
+.scale:nth-child(10)::after{
+    content: "60%";
+}
