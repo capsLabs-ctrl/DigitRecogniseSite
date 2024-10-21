@@ -1,7 +1,7 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask import Flask, request, jsonify, send_from_directory
+from flask_cors import CORS 
 import os
-from predict import predict, editArray, send_from_directory
+from predict import predict, editArray
 app = Flask(__name__, static_folder='frontend')
 CORS(app, origins=["http://127.0.0.1:5500"])
 @app.route('/')
